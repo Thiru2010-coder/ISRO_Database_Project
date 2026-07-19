@@ -30,18 +30,7 @@ CREATE TABLE Satellite (
     FOREIGN KEY (MissionID)
         REFERENCES Mission(MissionID)
 );
-CREATE TABLE Scientist (
-    ScientistID INT PRIMARY KEY AUTO_INCREMENT,
-    ScientistCode VARCHAR(10) UNIQUE NOT NULL,
-    ScientistName VARCHAR(80) NOT NULL,
-    Department VARCHAR(80),
-    Designation VARCHAR(60),
-    Experience INT,
-    MissionID INT,
 
-    FOREIGN KEY (MissionID)
-        REFERENCES Mission(MissionID)
-);
 DESCRIBE Mission;
 CREATE DATABASE isro_mission_operations;
 USE isro_mission_operations;
@@ -75,22 +64,7 @@ VALUES
 ('SAT105', 'Aditya-L1', 'Solar Observation', 'Halo Orbit', 1480.00, 'Active', 5),
 
 ('SAT106', 'EOS-07', 'Earth Observation', 'Low Earth Orbit', 156.00, 'Completed', 7);
-INSERT INTO Scientist
-(ScientistCode, ScientistName, Department, Designation, Experience, MissionID)
-VALUES
-('SCI101', 'Mission Scientist 1', 'Space Science', 'Project Scientist', 15, 1),
 
-('SCI102', 'Mission Scientist 2', 'Planetary Science', 'Project Scientist', 18, 2),
-
-('SCI103', 'Mission Scientist 3', 'Lunar Science', 'Mission Scientist', 12, 3),
-
-('SCI104', 'Mission Scientist 4', 'Spacecraft Systems', 'Mission Scientist', 14, 4),
-
-('SCI105', 'Mission Scientist 5', 'Solar Physics', 'Project Scientist', 16, 5),
-
-('SCI106', 'Mission Scientist 6', 'Human Spaceflight', 'Mission Scientist', 10, 6),
-
-('SCI107', 'Mission Scientist 7', 'Earth Observation', 'Project Scientist', 11, 7);
 SELECT * FROM Admin;
 SELECT * FROM Rocket;
 SELECT * FROM Mission;
